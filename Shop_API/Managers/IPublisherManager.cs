@@ -5,5 +5,5 @@ namespace Shop_API.Managers;
 
 public interface IPublisherManager
 {
-    Task<Publisher> CreatePushlisher(CreatePublisher publisher);
+    Task<PublisherModel> CreatePushlisher(CreatePublisher publisher);
 }

@@ -1,5 +1,6 @@
 ﻿using Shop_API.Context;
 using Shop_API.Entities;
+using Shop_API.Models;
 
 namespace Shop_API.Managers;
 
@@ -10,7 +11,7 @@ public class GenreManager:IGenreManager
     {
         _context = context;
     }
-    public async Task<Genre> CreateGenre(CreateGenre model)
+    public async Task<GenreModel> CreateGenre(CreateGenre model)
     {
         var genre = new Genre()
         {
@@ -19,6 +20,6 @@ public class GenreManager:IGenreManager
         };
         _context.Genres.Add(genre);
         await _context.SaveChangesAsync();
-        return genre;
+        return genre.ToModel();
     }
 }

@@ -17,16 +17,16 @@ public class AuthorManager :IManager<Author,AuthorModel>
 
     public async  Task<AuthorModel> Create(Author entity)
     {
-        var model = new Author()
+        var author = new Author()
         {
             Name = entity.Name,
             Books = new List<Book>(),
             Discounts = new List<Discount>()
         };
 
-        _context.Authors.Add(model);
+        _context.Authors.Add(author);
 
         await _context.SaveChangesAsync();
-        return model;
+        return author.ToModel();
     }
 }

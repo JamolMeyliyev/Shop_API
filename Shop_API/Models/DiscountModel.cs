@@ -2,13 +2,13 @@
 
 namespace Shop_API.Models;
 
-public record DisModel(int Id, string Name);
+public record DiscountModel(int Id, string Name);
 
 
 public static class Extension
 {
-    public static PublisherModel ToModel(this Publisher entity)
+    public static DiscountModel ToModel(this Discount entity)
     {
-        return new PublisherModel(entity.Id, entity.Name);
+        return new DiscountModel(entity.Id, entity.Name);
     }
 }
