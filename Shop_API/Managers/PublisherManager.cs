@@ -11,7 +11,7 @@ public class PublisherManager : IPublisherManager
     {
         _context = context;
     }
-    public async Task<Publisher> CreatePushlisher(CreatePublisher model)
+    public async Task<PublisherModel> CreatePushlisher(CreatePublisher model)
     {
         var publisher =  new Publisher() {
             Name= model.Name,
@@ -21,6 +21,6 @@ public class PublisherManager : IPublisherManager
 
         _context.Publisher.Add(publisher);
         await _context.SaveChangesAsync();
-        return publisher;
+        return publisher.ToModel();
     }
 }

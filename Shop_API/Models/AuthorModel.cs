@@ -12,6 +12,3 @@ public static class AuthorExtension
         return new AuthorModel(author.Id, author.Name);
     }
 }
-
-
-
